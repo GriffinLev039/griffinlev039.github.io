@@ -1,26 +1,71 @@
 * {
     /* border: 3px solid red; */
+    margin: 0px;
+    padding: 0px;
 }
 
-ul {
+
+
+
+.container {
     display: flex;
-    /* padding:auto; */
+    flex-flow: row wrap;
     /* border: 3px solid blue; */
-    align-content: center;
     justify-content: center;
-    flex-wrap: wrap;
-    flex: 1;
-    /* background-color: slateblue; */
-    flex-direction: row;
-    list-style-type: none;
-    column-gap: 150px;
-    margin-right: 2%;
-}
-
-li {
-    /* flex-grow: 1; */
-}
-
-h1, h2, h3, p {
+    column-gap: 11em;
+    margin: 0px 1% 1% 1%;
     text-align: center;
+    margin-bottom: 3px;
+}
+
+.child {
+    /* This is terrible :( */
+    background-color: antiquewhite;
+    /* margin-top:-2.5vh; */
+    margin:0px;
+    padding: 0px;
+}
+
+
+
+#intro {
+    flex-flow: column wrap;
+    height: 20%;
+}
+
+button {
+    /* Order: Top Right Bottom Left */
+    padding: 1rem 2rem 1rem 2rem;
+    font-size: 3vw;
+    font-weight: bolder;
+}
+
+h1 {
+    color: antiquewhite;
+    font-size: 7vw;
+    background: url(../img/shaymin.jpg) repeat;
+    background-clip: text;
+    color: transparent;
+}
+
+h2 {
+    font-size: 4vw;
+}
+
+h3 {
+    font-size: 2vw;
+}
+
+#spacer {
+    height: 30vh;
+    
+}
+
+#spacer2 {
+    height: 5vh;
+    
+}
+
+.backgroundimg {
+    
 }
