@@ -44,8 +44,8 @@ h1 {
     color: antiquewhite;
     font-size: 7vw;
     background: url(../img/shaymin.jpg) repeat;
-    background-clip: text;
-    color: transparent;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
 }
 
 h2 {
