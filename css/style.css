@@ -12,7 +12,7 @@
 
 * {
     font-family: 'Roboto-Light';
-    /* border: 3px solid red; */
+    /* border: 1px solid red; */
     margin: 0px;
     list-style: none;
     text-decoration: none;
@@ -47,7 +47,6 @@
 .body {
     display: flex;
     flex-flow: column nowrap;
-    
 }
 
 .child {
@@ -67,7 +66,10 @@
     justify-content: center;
     align-items: center;
     background: url(../img/LakeLynnBG.jpg);
+    background-attachment: fixed;
     background-size: 100%;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 
 .container {
@@ -160,3 +162,51 @@ h3 {
     font-size: 30px;
     width: 325px;
 }
+
+
+/* Styling for Who I am part */
+.container-tres {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: antiquewhite;
+    width: 80%;
+    font-size: 20px;
+    padding: 50px;
+    gap: 30px;
+    border-radius: 3vw;
+}
+
+
+/* This button format was taken from https://enjeck.com/btns/ - I am not yet familiar enough w/ buttons to create this, sadly. */
+.btn {
+    font-family: Arial, Helvetica, sans-serif;  
+    text-transform: uppercase;
+    color: black;
+}  
+.btn:hover .btn-slide-show-text1 {
+    margin-left: 65px;
+}  
+.btn-shadow-drop {
+    position: relative;
+    margin-top: 10%;
+    background: rgb(249, 250, 250);
+    padding: 20px;
+    font-size: 0.9em;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out 0s;
+    left: 0px;
+    top: 0px;
+    width: 180px;
+}  
+.btn-shadow-drop:hover {
+    left: 4px;
+    top: 4px;
+    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
+}  
+.btn-shadow-drop--black {
+    border: 1px solid rgb(51, 51, 51);
+    color: rgb(51, 51, 51);
+    box-shadow: rgb(51, 51, 51) 4px 4px 0px 0px;
+}  
