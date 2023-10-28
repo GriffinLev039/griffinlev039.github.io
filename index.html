@@ -1,42 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>GriffinLev.dev</title>
+    <title>Testsite_Alpha</title>
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-  <div id="spacer"></div>
-	<script src="js/index.js"></script>
-  <div class="container" id="intro">
-  <h1>Griffin Leventhal</h1>
-  <h2>Web Development Student</h2>
-  <div><h3>griffin@griffinlev.dev</h3></div>
-  </div>
-
-  <div id="spacer2"></div>
-  <!-- This button solution is temporary - not advised. Just to preview site.
-  Reference https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link -->
+</head>
+<body>
   
-  <div class="container">
-  <div class="child"><button type="button" onclick="location.href='https://github.com/GriffinLev039'">GitHub</button></div>
-  <div class="child"><button type="button" onclick="location.href='https://www.linkedin.com/in/griffin-leventhal-407755214'">Linkedin</button></div>
-  </div>
-  <!-- <ul>
-    <li id="left">far left</li>
-    <li id="left">left</li>
-    <li id="left">center-left</li>
-    <li>center-right</li>
-    <li>right</li>
-    <li>far right</li>
-  </ul> -->
-<div class="container">
-  <p>This is VERY early in development, this basically serves as a placeholder page. I was practicing flexboxes and this shows some progress.
-    <!-- I know its poor practice to comment out code like that, but eh.  -->
-  </p>
-</div>
-  </body>
+  <!-- Header -->
+
+
+<!-- Landing Page Primary Content -->
+    <div class="body">
+      <div class="header">
+        <div>
+          <h3 name="intro" id="intro">Griffin Leventhal</h1>
+        </div>
+          <ul class="headerchild">
+            <li>placeholder1</li>
+            <li>placeholder2</li>
+            <li>placeholder3</li>
+            <li>placeholder4</li>
+          </ul>
+      </div>
+
+        <div id="alpha">
+            <div class="container">
+                <h1>Griffin Leventhal</h1>
+                <h2>Web Development Student</h2>
+                <div><h3>griffin@griffinlev.dev</h3></div>
+                </div>
+                <!-- This button solution is temporary - not advised. Just to preview site.
+                Reference https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link -->
+                <div class="container" id="echo">
+                  <div><button type="button" onclick="location.href='https://github.com/GriffinLev039'">GitHub</button></div>
+                  <div><button type="button" onclick="location.href='https://www.linkedin.com/in/griffin-leventhal-407755214'">Linkedin</button></div>
+                </div>
+        </div>
+
+        <!-- second Fourth - Header, four images, .container 4 children -->
+        <div class="primary-sec-container">
+          <h1 id="whoami" name="whoami">What am I working on now?</h1>
+          <div class="container-sec">
+              <div>
+                  <img src="img/shaymin.jpg" class="second-img">
+                  <p class="subwhoami">The Odin Project</p>
+              </div>
+
+              <div>
+                  <img src="img/shaymin.jpg" class="second-img">
+                  <p class="subwhoami">Studying @ Wake Tech</p>
+              </div>
+
+              <div>
+                  <img src="img/shaymin.jpg" class="second-img">
+                  <p class="subwhoami">Updating this site!</p>
+              </div>
+
+              <div>
+                  <img src="img/shaymin.jpg" class="second-img">
+                  <p class="subwhoami">Self-Improvement and Mental Health</p>
+              </div>
+
+          </div>
+      </div>
+
+
+<!-- Landing Page Secondary Content -->
+        <div class="child" id="beta">
+            <div id="delta">
+              <p><a href='#intro'>My familiarity with various languages</a></p>
+            </div>
+            <div id="ceta">
+              <p>My plans for the future</p>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
 </html>
 

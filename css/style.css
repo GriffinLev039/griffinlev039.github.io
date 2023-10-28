@@ -1,71 +1,162 @@
+@font-face {
+    font-family: 'Roboto-Light' ;
+    src: url(../fonts/roboto/Roboto-Light.ttf);
+}
+
+
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(../fonts/roboto/Roboto-Bold.ttf);
+
+}
+
 * {
+    font-family: 'Roboto-Light';
     /* border: 3px solid red; */
     margin: 0px;
-    padding: 0px;
+    list-style: none;
+    text-decoration: none;
+    color:inherit;
 }
 
 
 
 
-.container {
+/* Header */
+.header {
+    /* Order: Top Right Bottom Left */
+    padding: 1.5vh auto 1.5vh auto;
+    background: white;
+    white-space: nowrap;
+    width: 100%;
+    height: 5vh;
     display: flex;
-    flex-flow: row wrap;
-    /* border: 3px solid blue; */
-    justify-content: center;
-    column-gap: 11em;
-    margin: 0px 1% 1% 1%;
-    text-align: center;
-    margin-bottom: 3px;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.headerchild {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 20px;
+}
+
+
+/* First Thing ppl see */
+.body {
+    display: flex;
+    flex-flow: column nowrap;
+    
 }
 
 .child {
-    /* This is terrible :( */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+#alpha {
+    display: flex;
+    flex-flow: column;
+    background-color:cornsilk;
+    min-width: 500px;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/LakeLynnBG.jpg);
+    background-size: 100%;
+}
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#echo {
+    flex-flow: row nowrap;
+    margin-top: 15px;
+    gap: 10rem;
+}
+
+/* Rest of page - Bottom two divs */
+
+#beta {
     background-color: antiquewhite;
-    /* margin-top:-2.5vh; */
-    margin:0px;
+    flex: 1;
     padding: 0px;
+    margin: 0px;
+}
+
+#ceta {
+    background-color: green;
+    flex: 1;
+    min-height: 500px;
+    min-width: 200px;
+}
+
+#delta {
+    flex: 1;
+    min-height: 500px;
+    min-width: 200px;
 }
 
 
-
-#intro {
-    flex-flow: column wrap;
-    height: 20%;
-}
-
-button {
-    /* Order: Top Right Bottom Left */
-    padding: 1rem 2rem 1rem 2rem;
-    font-size: 3vw;
-    font-weight: bolder;
-}
 
 h1 {
-    color: antiquewhite;
-    font-size: 7vw;
-    background: url(../img/shaymin.jpg) repeat;
+    font-size: 200px;
+    font-family: 'Roboto-Bold';
+    /* background: url(../img/shaymin.jpg) repeat;
     -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;  */
 }
 
 h2 {
-    font-size: 4vw;
+    font-size: 50px;
 }
 
 h3 {
-    font-size: 2vw;
+    font-size:30px;
 }
 
-#spacer {
-    height: 30vh;
-    
+
+
+/* Styling for third part */
+
+.primary-sec-container {
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
 }
 
-#spacer2 {
-    height: 5vh;
-    
+.container-sec {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2vw;
+    margin-top: 5vh;
+    text-align: center;
+
 }
 
-.backgroundimg {
-    
+.second-img {
+    width: 15vw;
+    border: 3px solid #3882F6;
+    border-radius: 10%;
+    width: 325px;
+}
+
+#whoami {
+    font-size: 80px;
+}
+
+.subwhoami {
+    font-size: 30px;
+    width: 325px;
 }
