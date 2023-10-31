@@ -62,12 +62,15 @@
     flex-flow: column;
     background-color:cornsilk;
     min-width: 500px;
-    min-height: 100vh;
+    height: 100vh;
+    max-height: 150vw;
     justify-content: center;
     align-items: center;
-    background: url(../img/LakeLynnBG.jpg);
+    background: url(../img/LakeLynnBG.jpg) no-repeat;
+    background-size: cover;
     background-attachment: fixed;
     background-size: 100%;
+
     color: white;
     text-shadow: 2px 2px black;
 }
@@ -77,6 +80,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 15px;
 }
 
@@ -111,7 +115,7 @@
 
 
 h1 {
-    font-size: 200px;
+    font-size: 10vw;
     font-family: 'Roboto-Bold';
     /* background: url(../img/shaymin.jpg) repeat;
     -webkit-background-clip: text; 
@@ -119,11 +123,11 @@ h1 {
 }
 
 h2 {
-    font-size: 50px;
+    font-size: 2.5vw;
 }
 
 h3 {
-    font-size:30px;
+    font-size:2vw;
 }
 
 
