@@ -1,216 +1,278 @@
 @font-face {
-    font-family: 'Roboto-Light' ;
-    src: url(../fonts/roboto/Roboto-Light.ttf);
+    font-family: 'gotham';
+    src: url(../fonts/Gotham\ Regular.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gotham';
+    src: url(../fonts/Gotham\ Book.otf);
+    font-weight: 400; 
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gotham';
+    src: url(../fonts/Gotham\ Bold.otf);
+    font-weight: 700;
+    font-style: normal;
 }
 
+@font-face {
+    font-family: 'gotham';
+    src: url(../fonts/Gotham\ Black.otf);
+    font-weight: 800;
+    font-style: normal;
+}
 
 @font-face {
-    font-family: 'Roboto-Bold';
-    src: url(../fonts/roboto/Roboto-Bold.ttf);
+    font-family: 'gotham';
+    src: url(../fonts/Gotham\ ItalicBold.otf);
+    font-weight: 700;
+    font-style: italic;
+}
 
+@font-face {
+    font-family: 'gotham';
+    src: url(../fonts/Gotham\ Italic.otf);
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'gotham';
+    src: url(../fonts/Gotham\ Ultra.otf);
+    font-style:normal;
+    font-weight: 900;
+}
+
+:root {
+    font-size: 100%;
 }
 
 * {
-    font-family: 'Roboto-Light';
+    font-family: 'gotham','proxima-nova','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    list-style-type: none;
     /* border: 1px solid red; */
-    margin: 0px;
-    list-style: none;
-    text-decoration: none;
-    color:inherit;
+}
+
+
+body {
+    margin: 0;
+}
+
+/* HEADER CONTENT */
+.header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10rem;
+    text-align: center;
+    
+}
+
+#logo {
+    justify-content: flex-start;
 }
 
 
 
 
-/* Header */
-.header {
+/* MAIN BODY CONTENT */
+
+.body {
+    display: grid;
+    grid-template-rows: 100vh 60vh auto 10vh;
+    background-color: antiquewhite;
+}
+
+
+/* LANDING CONTENT */
+
+.landing {
+    padding-top: 3%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 20%;
+    gap: 1rem;
+    max-height: 100%;
+    max-width: 100%;
+    background: url(../img/birch_tree.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+
+}
+
+.primary-text-content {
+    text-shadow:2px 2px white;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn_container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 33%;
+}
+
+.btn {
+    background-color: white;
     /* Order: Top Right Bottom Left */
-    padding: 1.5vh auto 1.5vh auto;
-    background: white;
-    white-space: nowrap;
+    padding: 20px;
+    letter-spacing: 5px;
+    font-size: .9em;
+    font-weight: 900;
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+    border: 1px solid black;
+    transition: all ease-in-out .4s;
+    min-width: 7.5vw;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transition: all ease-in-out 0.3s;
+    box-shadow: none;
+    background-color: gray;
+    color:white;
+    transform:scale(0.96);    
+}
+
+.down {
+    bottom: 0;
+    max-height: 10%;
+    position:absolute;
+}
+
+#name {
+    font-size: 12rem;
+    margin: 0;
+}
+
+#subname {
+    font-size: 4rem;
+    margin: 0;
+}
+
+#submail {
+    font-size: 3rem;
+    margin: 0;
+}
+
+/* About Me */
+.aboutme {
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    background-color: white;
     width: 100%;
-    height: 5vh;
+    font-size: 40px;
+}
+
+.sub_aboutme {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     align-items: center;
+    background-color: wheat;
+    border-radius: 20px;
+    padding: 50px;
+    width: 80%;
+    min-width: 80%;
+    gap: 30px;
+    font-size: 18px;
+    margin: auto;
+    height: 70%;
 }
 
-.headerchild {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 20px;
+.selfie {
+    max-width: 30%;
+    max-height: 120%;
+    border-radius: 10%;
 }
 
 
-/* First Thing ppl see */
-.body {
-    display: flex;
-    flex-flow: column nowrap;
-}
 
-.child {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-}
 
-#alpha {
-    display: flex;
-    flex-flow: column;
-    background-color:cornsilk;
-    min-width: 500px;
-    height: 100vh;
-    max-height: 150vw;
-    justify-content: center;
-    align-items: center;
-    background: url(../img/LakeLynnBG.jpg) no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-size: 100%;
 
-    color: white;
-    text-shadow: 2px 2px black;
-}
 
-.container {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+
+
+
+
+
+
+/* Work section */
+
+.mywork {
+    background-color: lightgrey;
     text-align: center;
-    gap: 15px;
+    font-size: 40px;
 }
 
-#echo {
-    flex-flow: row nowrap;
-    margin-top: 15px;
-    gap: 10rem;
-}
-
-/* Rest of page - Bottom two divs */
-
-#beta {
-    background-color: antiquewhite;
-    flex: 1;
-    padding: 0px;
-    margin: 0px;
-}
-
-#ceta {
-    background-color: green;
-    flex: 1;
-    min-height: 500px;
-    min-width: 200px;
-}
-
-#delta {
-    flex: 1;
-    min-height: 500px;
-    min-width: 200px;
-}
-
-
-
-h1 {
-    font-size: 10vw;
-    font-family: 'Roboto-Bold';
-    /* background: url(../img/shaymin.jpg) repeat;
-    -webkit-background-clip: text; 
-    -webkit-text-fill-color: transparent;  */
-}
-
-h2 {
-    font-size: 2.5vw;
-}
-
-h3 {
-    font-size:2vw;
-}
-
-
-
-/* Styling for third part */
-
-.primary-sec-container {
-    text-align: center;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-}
-
-.container-sec {
+.subwork {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: center;
     gap: 2vw;
-    margin-top: 5vh;
+    margin-top: 15px;
     text-align: center;
+    /* height: 100vh; */
+    padding: 15px;
+}
 
+.subwork_child {
+    font-size: 20px;
+    background-color: white;
+    border-radius: 10%;
+    transition:ease-in-out 0.3s;
+    border: 2px solid black;
 }
 
 .second-img {
     width: 15vw;
-    border: 3px solid #3882F6;
+    border: 3px solid white;
     border-radius: 10%;
     width: 325px;
 }
 
-#whoami {
-    font-size: 80px;
+
+
+
+.contacts {
+    background-color: grey;
+    text-align: center;
+    font-weight: 900;
 }
 
-.subwhoami {
-    font-size: 30px;
-    width: 325px;
+.body {
+    width: 100%;
+    height: 100vh;
+    scroll-snap-type:y proximity;
+    scroll-behavior:auto;
+}
+
+.section {
+    scroll-snap-align: start;
 }
 
 
-/* Styling for Who I am part */
-.container-tres {
-    display: flex;
-    flex-flow: row nowrap;
-    background-color: antiquewhite;
-    width: 80%;
-    font-size: 20px;
-    padding: 50px;
-    gap: 30px;
-    border-radius: 3vw;
+.subwork_child:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transition:ease-in-out 0.3s;
 }
 
-
-/* This button format was taken from https://enjeck.com/btns/ - I am not yet familiar enough w/ buttons to create this, sadly. */
-.btn {
-    font-family: Arial, Helvetica, sans-serif;  
-    text-transform: uppercase;
-    color: black;
-}  
-.btn:hover .btn-slide-show-text1 {
-    margin-left: 65px;
-}  
-.btn-shadow-drop {
-    position: relative;
-    margin-top: 10%;
-    background: rgb(249, 250, 250);
-    padding: 20px;
-    font-size: 0.9em;
-    font-weight: 700;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    transition: all 0.3s ease-in-out 0s;
-    left: 0px;
-    top: 0px;
-    width: 180px;
-}  
-.btn-shadow-drop:hover {
-    left: 4px;
-    top: 4px;
-    box-shadow: rgb(255, 255, 255) 0px 0px 0px 0px;
-}  
-.btn-shadow-drop--black {
-    border: 1px solid rgb(51, 51, 51);
-    color: rgb(51, 51, 51);
-    box-shadow: rgb(51, 51, 51) 4px 4px 0px 0px;
-}  
+#h:hover {
+    cursor: pointer;
+}
