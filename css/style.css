@@ -4,12 +4,14 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'gotham';
     src: url(../fonts/Gotham\ Book.otf);
-    font-weight: 400; 
+    font-weight: 400;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'gotham';
     src: url(../fonts/Gotham\ Bold.otf);
@@ -40,7 +42,7 @@
 @font-face {
     font-family: 'gotham';
     src: url(../fonts/Gotham\ Ultra.otf);
-    font-style:normal;
+    font-style: normal;
     font-weight: 900;
 }
 
@@ -49,7 +51,7 @@
 }
 
 * {
-    font-family: 'gotham','proxima-nova','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'gotham', 'proxima-nova', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     list-style-type: none;
     /* border: 1px solid red; */
 }
@@ -67,7 +69,7 @@ body {
     align-items: center;
     gap: 10rem;
     text-align: center;
-    
+
 }
 
 #logo {
@@ -107,7 +109,7 @@ body {
 }
 
 .primary-text-content {
-    text-shadow:2px 2px white;
+    text-shadow: 2px 2px white;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -141,14 +143,14 @@ body {
     transition: all ease-in-out 0.3s;
     box-shadow: none;
     background-color: gray;
-    color:white;
-    transform:scale(0.96);    
+    color: white;
+    transform: scale(0.96);
 }
 
 .down {
     bottom: 0;
     max-height: 10%;
-    position:absolute;
+    position: absolute;
 }
 
 #name {
@@ -235,11 +237,11 @@ body {
     font-size: 20px;
     background-color: white;
     border-radius: 10%;
-    transition:ease-in-out 0.3s;
+    transition: ease-in-out 0.3s;
     border: 2px solid black;
 }
 
-.second-img {
+.info_bubble {
     width: 15vw;
     border: 3px solid white;
     border-radius: 10%;
@@ -258,8 +260,8 @@ body {
 .body {
     width: 100%;
     height: 100vh;
-    scroll-snap-type:y proximity;
-    scroll-behavior:auto;
+    scroll-snap-type: y proximity;
+    scroll-behavior: auto;
 }
 
 .section {
@@ -267,12 +269,12 @@ body {
 }
 
 
-.subwork_child:hover{
+.subwork_child:hover {
     cursor: pointer;
     transform: scale(1.2);
-    transition:ease-in-out 0.3s;
+    transition: ease-in-out 0.3s;
 }
 
-#h:hover {
+.h:hover {
     cursor: pointer;
 }

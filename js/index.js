@@ -1,12 +1,11 @@
 let temp_var = 1;
-console.log('temp_var set to one');
-
 addEventListener('DOMContentLoaded', () => {
     console.log('temp_var set to one');
     let temp_var = 1;
 });
 
 
+//Button Redirects
 const GitHub = document.querySelector('.GitHub');
 
 GitHub.addEventListener('click', () => {
@@ -21,14 +20,14 @@ LinkedIn.addEventListener('click', () => {
 
 const shopping = document.querySelector('#shopping');
 
-shopping.addEventListener('click', ()=> {
+shopping.addEventListener('click', () => {
     window.location.href = 'pages/shoppinglistdemo.html';
 });
 
-
+//Header Function
 const fixedbanner = document.createElement('div');
 
-const header_content = new Array('Home', 'About Me', 'My Projects','What Am I Doing Now?', 'Shopping List');
+const header_content = new Array('Home', 'About Me', 'My Projects', 'What Am I Doing Now?', 'Shopping List');
 
 const leftdiv = document.createElement('div');
 const rightdiv = document.createElement('ul');
@@ -52,8 +51,8 @@ fixedbanner.style.alignItems = 'center';
 fixedbanner.style.backgroundColor = 'white';
 fixedbanner.style.position = 'fixed';
 fixedbanner.style.top = '0';
-fixedbanner.style.width='100%';
-fixedbanner.style.height='auto';
+fixedbanner.style.width = '100%';
+fixedbanner.style.height = 'auto';
 fixedbanner.style.left = '0';
 fixedbanner.style.textContent = 'testing 123';
 fixedbanner.style.transition = 'all ease-in-out 0.3s';
@@ -73,27 +72,33 @@ rightdiv.style.gap = '45px';
 rightdiv.id = 'rightdiv';
 
 
-for (let i = 0; i < header_content.length ; i++) {
+for (let i = 0; i < header_content.length; i++) {
     const testvar = document.createElement('li');
     testvar.textContent = header_content[i];
-    testvar.id='h';
+    testvar.setAttribute('class', 'h');
+    testvar.id = 'bannerLink' + i;
     rightdiv.appendChild(testvar);
     console.log(i)
     console.log(header_content[i]);
     console.log('u: ' + testvar);
+    
+    testvar.addEventListener('click', () => {
+         window.location.href = 'pages/' + testvar.id + '.html';
+    });
 }
 
 console.log('finished');
 
-window.addEventListener('scroll', ()=> {
+//Scroll Function
+window.addEventListener('scroll', () => {
     console.log('detected');
-    let h = document.documentElement, 
-    b = document.body,
-    st = 'scrollTop',
-    sh = 'scrollHeight';
+    let h = document.documentElement,
+        b = document.body,
+        st = 'scrollTop',
+        sh = 'scrollHeight';
 
 
-    let percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+    let percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
     if (percent > 33 && temp_var != 0) {
         fixedbanner.style.transform = 'scaleY(1)';
         temp_var = 0;
@@ -110,3 +115,17 @@ fixedbanner.appendChild(leftdiv);
 fixedbanner.appendChild(rightdiv);
 fixedbanner.style.transform = 'scaleY(0)';
 document.body.appendChild(fixedbanner);
+
+
+// EVERYTHING ABOVE IS A MESS AAAAAAAAAAAAAAAAAAAAAAAaa
+
+//issue with using bubbles as variable bc of bubbling? hopefully not
+const bubbles = document.querySelectorAll('.info_bubble');
+
+
+//Temporary thing, this will not work - better assigning them individually
+bubbles.forEach((bubble) => {
+    bubble.addEventListener('click', () => {
+        window.location.href = 'pages/calculator/index.html';
+    })
+});
