@@ -21,7 +21,7 @@ LinkedIn.addEventListener('click', () => {
 const shopping = document.querySelector('#shopping');
 
 shopping.addEventListener('click', () => {
-    window.location.href = 'pages/shoppinglistdemo.html';
+    window.location.href = 'pages/shoppinglist/shoppinglistdemo.html';
 });
 
 //Header Function
@@ -129,3 +129,13 @@ bubbles.forEach((bubble) => {
         window.location.href = 'pages/calculator/index.html';
     })
 });
+
+const etchasketch = document.getElementById('etchasketch');
+etchasketch.addEventListener('click', ()=> {
+    window.location.href = 'pages/etch-a-sketch/index.html'
+})
+
+// FUTURE PLANS FOR BUBBLING
+// - Create a system where I have an array of names, pictures, and links so its easier to update as needed.
+// - Unsure if I will actually commit to this, unsure what best practice is
+// - Written on 11/6/23 - Griffin Leventhal 

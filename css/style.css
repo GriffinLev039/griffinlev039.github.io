@@ -83,8 +83,8 @@ body {
 
 .body {
     display: grid;
-    grid-template-rows: 100vh 60vh auto 10vh;
-    background-color: antiquewhite;
+    grid-template-rows: 100vh 60vh auto auto;
+    /* background-color: antiquewhite; */
 }
 
 
@@ -101,11 +101,21 @@ body {
     gap: 1rem;
     max-height: 100%;
     max-width: 100%;
-    background: url(../img/birch_tree.jpg) no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    position: relative;
+    /* background-color: rgba(255, 148, 112,.09); */
 
+
+}
+
+.background_image {
+    display: block;
+    position: fixed;
+    z-index: -1;
+    background: url('../img/LakeLynnBG.jpg') no-repeat;
+    background-color: black;
+    background-size:cover;
+    width: 100vw;
+    height: 100vh;
+    filter: blur(5px);
 }
 
 .primary-text-content {
