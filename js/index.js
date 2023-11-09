@@ -1,6 +1,6 @@
 let temp_var = 1;
 addEventListener('DOMContentLoaded', () => {
-    console.log('temp_var set to one');
+    // console.log('temp_var set to one');
     let temp_var = 1;
 });
 
@@ -78,20 +78,20 @@ for (let i = 0; i < header_content.length; i++) {
     testvar.setAttribute('class', 'h');
     testvar.id = 'bannerLink' + i;
     rightdiv.appendChild(testvar);
-    console.log(i)
-    console.log(header_content[i]);
-    console.log('u: ' + testvar);
+    // console.log(i)
+    // console.log(header_content[i]);
+    // console.log('u: ' + testvar);
     
     testvar.addEventListener('click', () => {
          window.location.href = 'pages/' + testvar.id + '.html';
     });
 }
 
-console.log('finished');
+// console.log('finished');
 
 //Scroll Function
 window.addEventListener('scroll', () => {
-    console.log('detected');
+    // console.log('detected');
     let h = document.documentElement,
         b = document.body,
         st = 'scrollTop',
@@ -102,15 +102,19 @@ window.addEventListener('scroll', () => {
     if (percent > 33 && temp_var != 0) {
         fixedbanner.style.transform = 'scaleY(1)';
         temp_var = 0;
-        console.log('FIRED FIRED FIRED. temp_var is: ' + temp_var + ' and scroll % is: ' + percent);
+        // console.log('FIRED FIRED FIRED. temp_var is: ' + temp_var + ' and scroll % is: ' + percent);
     } else if (percent <= 33 && temp_var == 0) {
         temp_var = 1;
+        if (loopstate == 0) {
+            startbtn.click();
+        }
         fixedbanner.style.transform = 'scaleY(0)';
-        console.log('DELETED temp_var is: ' + temp_var + ' and scroll % is: ' + percent);
+        // console.log('DELETED temp_var is: ' + temp_var + ' and scroll % is: ' + percent);
+        
     }
 });
 
-console.log("you should only see this once.")
+// console.log("you should only see this once.")
 fixedbanner.appendChild(leftdiv);
 fixedbanner.appendChild(rightdiv);
 fixedbanner.style.transform = 'scaleY(0)';
@@ -134,6 +138,11 @@ const etchasketch = document.getElementById('etchasketch');
 etchasketch.addEventListener('click', ()=> {
     window.location.href = 'pages/etch-a-sketch/index.html'
 })
+
+const conways = document.getElementById('bub4');
+conways.addEventListener('click', ()=> {
+    window.location.href = 'pages/js-conways/index.html';
+});
 
 // FUTURE PLANS FOR BUBBLING
 // - Create a system where I have an array of names, pictures, and links so its easier to update as needed.
@@ -260,10 +269,10 @@ function gameLogic(target, identity) {
 }
 
 function action(score, pos) {
-    console.log(`position: ${pos} and score: ${score}`);
+    // console.log(`position: ${pos} and score: ${score}`);
     if (score == 3){
         commandList.push(() => {indexGrid[pos].classList.toggle('child_on', true)});
-        console.log('come alive.')
+        // console.log('come alive.')
     }
     if (indexGrid[pos].classList.contains('child_on') == false) { 
         if (score <= 1 || score >= 4) {
@@ -273,17 +282,17 @@ function action(score, pos) {
         commandList.push(() => {indexGrid[pos].classList.toggle('child_on', false)});
     } else if (score == 3){
         commandList.push(() => {indexGrid[pos].classList.toggle('child_on', true)});
-        console.log('come alive.')
+        // console.log('come alive.')
     } else if (indexGrid[pos].classList.contains('child_on') == true) {
         if (score == 2) {
-            console.log('stay alive: ' + pos);
+            // console.log('stay alive: ' + pos);
         }
     }
 }
 
 function executeCommands() {
     for (let i = 0; i < commandList.length; i++) {
-        console.log(commandList[i]);
+        // console.log(commandList[i]);
         commandList[i]();
     }
 }
@@ -296,14 +305,14 @@ function executeCommands() {
 
 const gridchildren = document.querySelectorAll('.child_default');
 let indexGrid = Array.from(gridchildren);
-console.log('indexGrid');
-console.log('indexGrid' + indexGrid);
+// console.log('indexGrid');
+// console.log('indexGrid' + indexGrid);
 
 function mainFunction() {
     // const gridchildren = document.querySelectorAll('.child_default');
     indexGrid = Array.from(gridchildren);
-    console.log('indexGrid');
-    console.log('indexGrid' + indexGrid);
+    // console.log('indexGrid');
+    // console.log('indexGrid' + indexGrid);
 
 
     commandList = [];
@@ -329,7 +338,7 @@ loopbtn.addEventListener('click', ()=> {
         loopstate = 1;
         loopbtn.style.backgroundColor = 'green';
         // loopsec = Number.parseInt(prompt('How many seconds per loop?')) * 100;
-        loopsec = 200;
+        loopsec = 370;
         // loopbtn.textContent = `Loop every ${loopsec / 100} seconds.`;
         setInterval(loopFunction, loopsec);
     } else {

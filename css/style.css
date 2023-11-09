@@ -118,6 +118,7 @@ body {
 } */
 
 .primary-text-content {
+    margin-top: 15%;
     text-shadow: 2px 2px white;
     display: flex;
     flex-flow: column;
@@ -327,6 +328,7 @@ body {
 
 .child_on {
     background-color: greenyellow;
+    /* transition: all 0.2s ease-in-out; */
 }
 
 .child_default:hover {
@@ -337,10 +339,11 @@ body {
     bottom: 0;
     left:0;
     position:absolute;
+    
 }
 .startbtn {
     bottom: 0;
     right: 0;
-    position: absolute;
+    position: fixed;
     
 }
