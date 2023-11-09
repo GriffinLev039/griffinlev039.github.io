@@ -27,7 +27,8 @@ shopping.addEventListener('click', () => {
 //Header Function
 const fixedbanner = document.createElement('div');
 
-const header_content = new Array('Home', 'About Me', 'My Projects', 'What Am I Doing Now?', 'Shopping List');
+const header_content = new Array('Home', 'About Me', 'My Projects', 'What Am I Doing Now?');
+const header_links = new Array("document.querySelector('.landing').scrollIntoView({behavior: 'smooth'})", "document.querySelector('#aboutme').scrollIntoView({behavior: 'smooth'})", "document.querySelector('#whathave').scrollIntoView({behavior: 'smooth'})", "document.querySelector('#whatami').scrollIntoView({behavior: 'smooth'})");
 
 const leftdiv = document.createElement('div');
 const rightdiv = document.createElement('ul');
@@ -78,13 +79,12 @@ for (let i = 0; i < header_content.length; i++) {
     testvar.setAttribute('class', 'h');
     testvar.id = 'bannerLink' + i;
     rightdiv.appendChild(testvar);
+    testvar.addEventListener('click', ()=>{
+        header_links[i];
+    })
     // console.log(i)
     // console.log(header_content[i]);
     // console.log('u: ' + testvar);
-    
-    testvar.addEventListener('click', () => {
-         window.location.href = 'pages/' + testvar.id + '.html';
-    });
 }
 
 // console.log('finished');
@@ -143,6 +143,21 @@ const conways = document.getElementById('bub4');
 conways.addEventListener('click', ()=> {
     window.location.href = 'pages/js-conways/index.html';
 });
+
+const wakeTech = document.getElementById('bub5');
+wakeTech.addEventListener('click', ()=>{
+    window.location.href='https://waketech.edu';
+})
+
+const theOdinProject = document.getElementById('bub6');
+theOdinProject.addEventListener('click', ()=> {
+    window.location.href='https://theodinproject.com';
+})
+
+const siteUpdate = document.getElementById('bub7');
+siteUpdate.addEventListener('click', ()=> {
+    window.location.href='https://github.com/griffinlev039';
+})
 
 // FUTURE PLANS FOR BUBBLING
 // - Create a system where I have an array of names, pictures, and links so its easier to update as needed.
@@ -324,8 +339,6 @@ function mainFunction() {
         // console.log('ChildTest: ' + (position));
         gameLogic(position, child);
     }
-
-    console.info(commandList);
     executeCommands();
 }
 
