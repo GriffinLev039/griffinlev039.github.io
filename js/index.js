@@ -15,7 +15,7 @@ GitHub.addEventListener('click', () => {
 const LinkedIn = document.querySelector('.LinkedIn');
 
 LinkedIn.addEventListener('click', () => {
-    window.location.href = 'https://www.linkedin.com/in/griffin-leventhal-407755214';
+    window.location.href = 'https://www.linkedin.com/in/griffinlevdev';
 });
 
 const shopping = document.querySelector('#shopping');
