@@ -1,0 +1,5 @@
+ - 
+ - Create my own logo
+ - Properly animate SVG
+ - Create color scheme in style.css
+ - Create images for projects

@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+}
+
+:root {
+    --background: #EBDBB3;
+    --typeColor: #282828;
+    --primaryColor: #56734B;
+    --targetImg: url(img/gruvbox-R.svg);
+    --hamburgerImg: url(img/ubuntu-logo.svg);
+    --home-height: 100vh;
+    --home-width: 33vw;
+    --hamburger-height: 50px;
+    --hamburger-width: 50px;
+}
+
+/* GENERAL STYLINGS */
+body {
+    background-color: var(--background);
+}
+
+.button {
+    display: flex;
+    width: 233.509px;
+    height: 91px;
+    padding: 0px 39.179px 0px 36.33px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 17.17px;
+    border: 6.009px solid var(--Original-Primary, #56734B);
+}
+
+.name {
+    margin-top: 0px;
+    margin-bottom: 10%;
+    color: #282828;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 16em;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25.444px;
+    letter-spacing: 0.127px;
+}
+
+.myTitle {
+    margin: 0px;
+    color: var(--foreground-foreground3, #665C54);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 4.5em;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.myEmail {
+    margin: 0px;
+    color: var(--foreground-foreground4, #7C6F64);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 3.5em;
+    font-style: italic;
+    font-weight: 100;
+    line-height: normal;
+}
+
+.page {
+    height: 100vh;
+    width: 100vw;
+}
+
+
+/* FIRST SECTION/FIRST "PAGE" */
+#bannerAndIcon {
+    position: fixed;
+    transform-origin: 100% 0%;
+    flex-shrink: 0;
+    height: var(--home-height);
+    width: var(--home-width);
+    /* border: 3px solid black; */
+    background: var(--targetImg) no-repeat center/cover;
+    /* border-radius: 5px; */
+    animation: example 1s 3s ease-in-out forwards;
+    animation-delay: calc(var(--scroll) * -3s);
+    animation-play-state: paused;
+    z-index: -1;
+}
+
+@keyframes example {
+    0% {
+        background-image: var(--targetImg);
+        rotate: 0deg;
+    }
+
+    5% {
+        left: -3%;
+
+    }
+
+    10% {
+        left: -6%;
+    }
+
+    15% {
+        left: -9%;
+    }
+
+    20% {
+        left: -12%;
+
+    }
+
+    25% {
+        left: -15%;
+    }
+
+    30% {
+        left: -18%;
+
+    }
+
+    35% {
+        left: -21%;
+
+    }
+
+    40% {
+        left: -26%;
+
+    }
+
+    45% {
+        left: -29%;
+        z-index: inherit;
+
+    }
+
+    50% {
+        background-image: var(--targetImg);
+        left: -30%;
+        rotate: -90deg;
+        z-index: 1;
+
+
+    }
+
+    85% {
+        background-image: var(--targetImg);
+        left: -2.5%;
+        width: 50px;
+        rotate: -90deg;
+        z-index: 1;
+
+    }
+
+    100% {
+        background-image: var(--hamburgerImg);
+        width: 50px;
+        height: 50px;
+        left: -2.5%;
+        rotate: -90deg;
+        z-index: 1;
+
+    }
+}
+
+#content {
+    position: sticky;
+    inset: 0;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    padding-top: 30px;
+}
+
+#content>* {
+    user-select: none;
+    -moz-user-select: none;
+}
+
+#Lname {
+    margin-bottom: 5%;
+}
+
+
+
+
+
+/* Second Section/Second "Page" */
+
+#page2 {
+    display: flex;
+    flex-flow: row;
+    background: var(--Grey-Background250, #D5C4A1);
+}
+
+#aboutLeft {
+    width: 40%;
+    background-image: url(img/image\ 1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+#aboutRight {
+    padding: 0% 10% 0% 10%;
+    color: #000;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    width: 40%;
+}
+
+/* #skillContainer {
+    width: auto;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+
+}
+
+.skillChild {
+    Effectively the same as .skillChild, I just wanna do this
+    width: 200px;
+    height: 100px;
+    border: 4px solid var(--primaryColor);
+    border-radius: 25px;
+    background-color: var(--background);
+}
+
+.skillChild:hover {
+    scale: 1.25;
+    border: 4px solid chocolate;
+}
+
+.skillChild:active {
+    scale: 1.2;
+} */
+
+/* Project Page Related CSS */
+.projPage {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 75vh;
+    width: 100vw;
+}
+
+.projLeft {
+    width: 50%;
+    height: 100%;
+}
+
+.projLeft {
+    padding-top: 36px;
+    padding-left: 27px;
+}
+
+.projRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+
+.projTitle {
+    margin-top: auto;
+    margin-bottom: auto;
+    color: var(--gray-0, #1D2021);
+    font-family: Roboto;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.projBio {
+    color: var(--gray-0, #1D2021);
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    /* Temporary Dimensions Below */
+    width: 516px;
+    min-height: 180px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.listCaption {
+    color: var(--gray-0, #1D2021);
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.projList {
+    color: var(--gray-0, #1D2021);
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.projImg {
+    width: 673px;
+    height: 640px;
+    flex-shrink: 0;
+    border-radius: 26.575px;
+    background: var(--yellow-dark, #B57614);
+}
+
+#proj1 {
+    background: #FABD30;
+}
+
+#proj2 {
+    background: #FB4833;
+}
+
+#proj3 {
+    background: #83A598;
+}
+
+#proj4 {
+    background: #8EC07A;
+}
+
+/* FOURTH PAGE | RESUME PAGE */
+#resume {
+    background-color: var(--background);
+    min-height: calc(11.7in + 60px);
+    height: auto;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+/* Footer  */
+#footer {
+    height: 10vh;
+    width: 100vw;
+    background-color: black;
+}
