@@ -1,3 +1,10 @@
+window.addEventListener('DOMContentLoaded',()=>{
+  if(window.outerWidth < window.outerHeight){
+    alert("You are likely on a mobile or vertical display, where this website will not render properly. Feel free to continue using the site, but please keep that in mind.");
+  }
+})
+
+
 //Sets two global variables that define xPos, yPos
 //xPos, yPos are private and only accessible via getter
 const keyVar = (function () {

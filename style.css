@@ -374,3 +374,15 @@ body {
     width: 100vw;
     background-color: black;
 }
+
+.redBG{
+    background-color: #E93925;
+}
+
+.blueBG{
+    background-color: #709084;
+}
+
+.greenBG{
+    background-color: #74A162;
+}
