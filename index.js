@@ -23,6 +23,23 @@ window.addEventListener('scroll', () => {
 console.log("Done!");
 
 
+// Sets the event listeners for the home page buttons
+(()=>{
+  const linkedinBtn = document.getElementById('linkedinBtn');
+  const githubBtn = document.getElementById('githubBtn');
+  const contactBtn = document.getElementById('contactBtn');
+  linkedinBtn.addEventListener('click',()=>{
+    window.location.href='https://www.linkedin.com/in/griffinlevdev';
+  });
+  githubBtn.addEventListener('click',()=>{
+    window.location.href='https://www.github.com/griffinlev039';
+  });
+  contactBtn.addEventListener('click',()=>{
+    window.location.href = 'mailto:griffinlev@griffinlev.dev';
+  })
+})();
+
+
 
 //There should be a grid made up of coordinate ranges, if item is 
 //dragged from one part of grid then it'll swap with the previous one. 

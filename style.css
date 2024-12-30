@@ -19,16 +19,30 @@ body {
     background-color: var(--background);
 }
 
+#buttonContainer {
+    position:fixed;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    
+}
+
 .button {
     display: flex;
-    width: 233.509px;
-    height: 91px;
-    padding: 0px 39.179px 0px 36.33px;
+    width: 75px;
+    height: 75px;
+    /* padding: 0px 39.179px 0px 36.33px; */
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
     border-radius: 17.17px;
     border: 6.009px solid var(--Original-Primary, #56734B);
+    margin: 20px;
+    background-color: var(--background);
+    color: var(--primaryColor);
+    font-weight: bolder;
+    cursor: pointer;
+
 }
 
 .name {
@@ -71,21 +85,26 @@ body {
     width: 100vw;
 }
 
-
 /* FIRST SECTION/FIRST "PAGE" */
 #bannerAndIcon {
     position: fixed;
     transform-origin: 100% 0%;
+    
     flex-shrink: 0;
     height: var(--home-height);
     width: var(--home-width);
-    /* border: 3px solid black; */
-    background: var(--targetImg) no-repeat center/cover;
+    background: var(--targetImg) no-repeat;
     /* border-radius: 5px; */
+    background-size:cover;
     animation: example 1s 3s ease-in-out forwards;
-    animation-delay: calc(var(--scroll) * -3s);
+    animation-delay: calc(var(--scroll) * -7s);
     animation-play-state: paused;
     z-index: -1;
+}
+.button > img {
+    height: 50px;
+    width: 50px;
+    color: var(--primaryColor); 
 }
 
 @keyframes example {
@@ -127,23 +146,20 @@ body {
     }
 
     40% {
-        left: -26%;
+        left: -21%;
 
     }
 
     45% {
-        left: -29%;
-        z-index: inherit;
+        left: -21%;
 
     }
 
     50% {
         background-image: var(--targetImg);
-        left: -30%;
+        /* left: -21%; */
         rotate: -90deg;
-        z-index: 1;
-
-
+        z-index: -1;
     }
 
     85% {
@@ -151,7 +167,7 @@ body {
         left: -2.5%;
         width: 50px;
         rotate: -90deg;
-        z-index: 1;
+        z-index: -1;
 
     }
 
