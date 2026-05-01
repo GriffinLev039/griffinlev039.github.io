@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Griffin Leventhal's Portfolio</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        :root {
+            --primary-color: #d4421a;
+            --cream-color: #ede9e1;
+            --ink-color: #1c1c1a;
+            --warm-gray: #c8c4bb;
+        }
+
+        @font-face {
+            font-family: "Neokurat";
+            src: url("../resources/neokuratplakat-webfont.woff2");
+        }
+
+        /* RESET STYLINGS */
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            /* outline: 1px solid red; */
+        }
+
+        /* LARGE HEADER GRAPHIC */
+
+        body {
+            background-color: var(--cream-color);
+            width: 100vw;
+            height: 300vh;
+            font-family: "Syne";
+        }
+
+        main {
+            height: 100%;
+            width: 100%;
+        }
+
+        header {
+            text-align: right;
+            width: 100%;
+            height: 610px;
+            background-color: var(--primary-color);
+            color: var(--cream-color);
+            font-size: 340px;
+            font-family: 'Neokurat';
+            padding-right: 30px;
+            gap: 0px;
+            line-height: .85;
+        }
+
+        /* ACTUAL HEADER */
+        #real-header {
+            display: flex;
+            position: sticky;
+            top: 0;
+            justify-content: space-between;
+            width: 100%;
+            height: 100px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+
+            /* Optional: subtle border to define the glass edge */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-right: 130px;
+            text-align: center;
+        }
+
+        #real-header ul {
+            display: flex;
+            text-decoration: none;
+            list-style-type: none;
+            gap: 40px;
+            color: var(--ink-color);
+            margin: auto 0;
+            font-size: 33px;
+        }
+
+        #real-header h4 {
+            font-size: 66.4px;
+            font-weight: 400;
+        }
+
+        #real-header a {
+            text-decoration: none;
+            color: var(--ink-color);
+
+        }
+
+        /* 'Hero' Content */
+        #main-container {
+            display: flex;
+            height: 600px;
+            width: 100%;
+            padding: 0 48px;
+            gap: 28px;
+        }
+
+        #main-container>img {
+            background-image: url('https://design.penpot.app/assets/by-file-media-id/95ecf5e0-91fe-80de-8007-f45dc7c8016a');
+            width: 351px;
+            height: 481px;
+        }
+
+        #main-container p {
+            font: normal normal 400 36px/0.8 "Syne";
+        }
+
+        hr {
+            width: 90%;
+            margin: 0px auto 25px auto;
+        }
+
+        /* Project Display Page */
+
+        #project-page {
+            width: 1810px;
+            display: flex;
+            flex-flow: row wrap;
+            gap: none;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 90px;
+            /* Needs to be equal to shadow + roughly 40px*/
+            box-shadow: -50px 50px 0px 0px rgba(0, 0, 0, 1);
+        }
+
+        .project-item {
+            position: relative;
+            background-color: var(--cream-color);
+            width: auto;
+            border: 2px solid var(--ink-color);
+            width: 362px;
+            height: 401px;
+            padding: 20px;
+        }
+
+        .project-item img {
+            display: block;
+            height: 150px;
+            width: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .project-item h3 {
+            margin-top: 9px;
+            margin-bottom: 10px;
+            font: normal normal 400 55px/0.85 "Neokurat";
+        }
+
+        .project-item p {
+            font: normal normal 400 15px/1.2 "Syne";
+        }
+
+        .project-item div.icon-link {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 35px;
+            height: 35px;
+            background-color: var(--cream-color);
+            border: 4px solid var(--ink-color);
+            margin: 9px;
+            cursor: pointer;
+        }
+
+        .project-item .topic-chip-container {
+            margin-top: 10px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .project-item .topic-chip {
+            border: 2px solid black;
+            padding: 3px;
+            font: normal normal 400 18px/0.8 "Syne";
+        }
+
+        /* BLOG PORTION */
+        #blog-page {
+            display: flex;
+            width: 87.25vw;
+            padding: 0 80px;
+            gap: 70px;
+            justify-content: space-between;
+        }
+
+        #blog-right {
+            height: fit-content;
+            width: fit-content;
+            box-shadow: 50px 50px 0px 0px rgba(0, 0, 0, 1);
+
+        }
+
+
+        #blog-title-card {
+            font: normal normal 400 240.3208755977516px/0.8 "Neokurat";
+            color: var(--cream-color);
+            background-color: var(--primary-color);
+            width: 720px;
+            height: 480px;
+        }
+
+
+
+        .blog-item {
+            display: flex;
+            width: 1050px;
+            height: 250px;
+            border: 2px solid var(--ink-color);
+            padding: 25px;
+            gap: 19px;
+            cursor: pointer;
+        }
+
+
+        .blog-item .blog-img-text {
+            position: relative;
+            min-width: 400px;
+            min-height: 175px;
+            width: 400px;
+            height: 175px;
+            background-color: var(--primary-color);
+            font: normal normal 400 60.02768970005055px/0.8 "Neokurat";
+        }
+
+        .blog-actual-text {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            margin: 8px;
+            color: var(--cream-color);
+        }
+
+        .blog-item-content p {
+            font: normal normal 400 18px/1.2 "Syne";
+        }
+
+        .blog-content-lower {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .blog-chip-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .blog-chip {
+            border: 2px solid black;
+            padding: 3px;
+            font: normal normal 400 18px/0.8 "Syne";
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <p>Developer<br>Designer</p>
+    </header>
+    <main>
+        <div id="real-header">
+            <h4>Griffin Leventhal</h4>
+            <ul>
+                <li class="header-link"><a href="">Home</a></li>
+                <li class="header-link"><a href="">Projects</a></li>
+                <li class="header-link"><a href="">Blog</a></li>
+            </ul>
+        </div>
+        <hr>
+        <div id="main-container">
+            <img src="https://design.penpot.app/assets/by-file-media-id/95ecf5e0-91fe-80de-8007-f45dc7c8016a" alt="">
+            <p>Sint sit non ea do ex officia. Ex commodo nostrud esse. Duis magna sunt magna dolore est esse
+                culpa non est aliqua. Et cillum sit cillum officia reprehenderit deserunt excepteur mollit eu consequat
+                tempor duis ex aliquip et.
+                Magna eiusmod aute labore. Occaecat ea do consequat veniam sit nostrud laborum minim pariatur aliqua.
+                Velit ullamco laboris sunt Lorem incididunt dolor nulla in aliquip. Ullamco officia voluptate sint
+                commodo id exercitation culpa duis nulla ea nisi. Exercitation commodo qui laborum eiusmod voluptate ex
+                laboris. Nostrud duis commodo irure sit ullamco enim ad duis duis voluptate. Veniam ullamco et aliqua.
+                Occaecat nostrud velit culpa ullamco nisi officia ut.
+                <br><br>
+                Sint sit non ea do ex officia. Ex commodo nostrud esse. Duis magna sunt magna dolore est esse
+                culpa non est aliqua. Et cillum sit cillum officia reprehenderit deserunt excepteur mollit eu consequat
+                tempor duis ex aliquip et.
+                Magna eiusmod aute labore. Occaecat ea do consequat veniam sit nostrud laborum minim pariatur aliqua.
+                Velit ullamco laboris sunt Lorem incididunt dolor nulla in aliquip. Ullamco officia voluptate sint
+                commodo id exercitation culpa duis nulla ea nisi. Exercitation commodo qui laborum eiusmod voluptate ex
+                laboris. Nostrud duis commodo irure sit ullamco enim ad duis duis voluptate. Veniam ullamco et aliqua.
+                Occaecat nostrud velit culpa ullamco nisi officia ut.
+            </p>
+        </div>
+        <div id="project-page">
+            <div class="project-item">
+                <img src="" alt="">
+                <h3>CURRENT PROJECT</h3>
+                <p>Laborum eiusmod dolor in aute Lorem occaecat pariatur consectetur. Exercitation duis minim incididunt
+                    do laboris laboris veniam. </p>
+                <div class="topic-chip-container">
+                    <div class="topic-chip">React Native</div>
+                    <div class="topic-chip">React Native</div>
+                </div>
+                <div class="icon-link"></div>
+            </div>
+            <div class="project-item">
+                <img src="" alt="">
+                <h3>CURRENT PROJECT</h3>
+                <p>Laborum eiusmod dolor in aute Lorem occaecat pariatur consectetur. Exercitation duis minim incididunt
+                    do laboris laboris veniam. </p>
+                <div class="topic-chip-container">
+                    <div class="topic-chip">React Native</div>
+                    <div class="topic-chip">React Native</div>
+                </div>
+                <div class="icon-link"></div>
+            </div>
+            <div class="project-item">
+                <img src="" alt="">
+                <h3>CURRENT PROJECT</h3>
+                <p>Laborum eiusmod dolor in aute Lorem occaecat pariatur consectetur. Exercitation duis minim incididunt
+                    do laboris laboris veniam. </p>
+                <div class="topic-chip-container">
+                    <div class="topic-chip">React Native</div>
+                    <div class="topic-chip">React Native</div>
+                </div>
+                <div class="icon-link"></div>
+            </div>
+            <div class="project-item">
+                <img src="" alt="">
+                <h3>CURRENT PROJECT</h3>
+                <p>Laborum eiusmod dolor in aute Lorem occaecat pariatur consectetur. Exercitation duis minim incididunt
+                    do laboris laboris veniam. </p>
+                <div class="topic-chip-container">
+                    <div class="topic-chip">React Native</div>
+                    <div class="topic-chip">React Native</div>
+                </div>
+                <div class="icon-link"></div>
+            </div>
+            <div class="project-item">
+                <img src="" alt="">
+                <h3>CURRENT PROJECT</h3>
+                <p>Laborum eiusmod dolor in aute Lorem occaecat pariatur consectetur. Exercitation duis minim incididunt
+                    do laboris laboris veniam. </p>
+                <div class="topic-chip-container">
+                    <div class="topic-chip">React Native</div>
+                    <div class="topic-chip">React Native</div>
+                </div>
+                <div class="icon-link"></div>
+            </div>
+            <div class="project-item">
+                <img src="" alt="">
+                <h3>CURRENT PROJECT</h3>
+                <p>Laborum eiusmod dolor in aute Lorem occaecat pariatur consectetur. Exercitation duis minim incididunt
+                    do laboris laboris veniam. </p>
+                <div class="topic-chip-container">
+                    <div class="topic-chip">React Native</div>
+                    <div class="topic-chip">React Native</div>
+                </div>
+                <div class="icon-link"></div>
+            </div>
+            <div class="project-item">
+                <img src="" alt="">
+                <h3>CURRENT PROJECT</h3>
+                <p>Laborum eiusmod dolor in aute Lorem occaecat pariatur consectetur. Exercitation duis minim incididunt
+                    do laboris laboris veniam. </p>
+                <div class="topic-chip-container">
+                    <div class="topic-chip">React Native</div>
+                    <div class="topic-chip">React Native</div>
+                </div>
+                <div class="icon-link"></div>
+            </div>
+            <div class="project-item">
+                <img src="" alt="">
+                <h3>CURRENT PROJECT</h3>
+                <p>Laborum eiusmod dolor in aute Lorem occaecat pariatur consectetur. Exercitation duis minim incididunt
+                    do laboris laboris veniam. </p>
+                <div class="topic-chip-container">
+                    <div class="topic-chip">React Native</div>
+                    <div class="topic-chip">React Native</div>
+                </div>
+                <div class="icon-link"></div>
+            </div>
+            <div class="project-item">
+                <img src="" alt="">
+                <h3>CURRENT PROJECT</h3>
+                <p>Laborum eiusmod dolor in aute Lorem occaecat pariatur consectetur. Exercitation duis minim incididunt
+                    do laboris laboris veniam. </p>
+                <div class="topic-chip-container">
+                    <div class="topic-chip">React Native</div>
+                    <div class="topic-chip">React Native</div>
+                </div>
+                <div class="icon-link"></div>
+            </div>
+            <div class="project-item">
+                <img src="" alt="">
+                <h3>CURRENT PROJECT</h3>
+                <p>Laborum eiusmod dolor in aute Lorem occaecat pariatur consectetur. Exercitation duis minim incididunt
+                    do laboris laboris veniam. </p>
+                <div class="topic-chip-container">
+                    <div class="topic-chip">React Native</div>
+                    <div class="topic-chip">React Native</div>
+                </div>
+                <div class="icon-link"></div>
+            </div>
+        </div>
+        <div id="blog-page">
+            <div id="blog-left">
+                <div id="blog-title-card">My Blog</div>
+                <div id="social-container">
+                    <div class="social-row">
+                        <img src="" alt="">
+                        <p>Github URL</p>
+                    </div>
+                    <div class="social-row">
+                        <img src="" alt="">
+                        <p>Linkedin URL</p>
+                    </div>
+                    <div class="social-row">
+                        <img src="" alt="">
+                        <p>Email or smth</p>
+                    </div>
+                </div>
+            </div>
+            <div id="blog-right">
+                <div class="blog-item">
+                    <div class="blog-img-text">
+                        <p class="blog-actual-text">Ling's Cars Rewrite</p>
+                    </div>
+                    <div class="blog-item-content">
+                        <p>Laboris nulla amet labore cupidatat non labore deserunt ullamco labore enim eiusmod sint.
+                            Irure eu et in. In aliquip commodo mollit nostrud tempor ad ex nulla cupidatat esse laborum
+                            aliquip. Officia duis do consectetur incididunt sunt laborum duis aute consequat elit enim
+                            ut nisi incididunt. Voluptate ipsum et laboris duis sunt minim mollit sint sunt ex ex. Culpa
+                            quis nulla pariatur. Cillum laboris aliquip incididunt dolor qui velit velit id duis Lorem.
+                            Irure ea est incididunt ex sunt velit magna cupidatat esse.</p>
+                        <div class="blog-content-lower">
+                            <div class="blog-chip-container">
+                                <div class="blog-chip">
+                                    React N.
+                                </div>
+                                <div class="blog-chip">
+                                    React N.
+                                </div>
+                            </div>
+                            <button class="blog-read-btn" id="lings-article">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-item">
+                    <div class="blog-img-text">
+                        <p class="blog-actual-text">Blog Title</p>
+                    </div>
+                    <div class="blog-item-content">
+                        <p>Laboris nulla amet labore cupidatat non labore deserunt ullamco labore enim eiusmod sint.
+                            Irure eu et in. In aliquip commodo mollit nostrud tempor ad ex nulla cupidatat esse laborum
+                            aliquip. Officia duis do consectetur incididunt sunt laborum duis aute consequat elit enim
+                            ut nisi incididunt. Voluptate ipsum et laboris duis sunt minim mollit sint sunt ex ex. Culpa
+                            quis nulla pariatur. Cillum laboris aliquip incididunt dolor qui velit velit id duis Lorem.
+                            Irure ea est incididunt ex sunt velit magna cupidatat esse.</p>
+                        <div class="blog-content-lower">
+                            <div class="blog-chip-container">
+                                <div class="blog-chip">
+                                    React N.
+                                </div>
+                                <div class="blog-chip">
+                                    React N.
+                                </div>
+                            </div>
+                            <button class="blog-read-btn" id="test-article">Read</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-item">
+                    <div class="blog-img-text">
+                        <p class="blog-actual-text">Blog Title</p>
+                    </div>
+                    <div class="blog-item-content">
+                        <p>Laboris nulla amet labore cupidatat non labore deserunt ullamco labore enim eiusmod sint.
+                            Irure eu et in. In aliquip commodo mollit nostrud tempor ad ex nulla cupidatat esse laborum
+                            aliquip. Officia duis do consectetur incididunt sunt laborum duis aute consequat elit enim
+                            ut nisi incididunt. Voluptate ipsum et laboris duis sunt minim mollit sint sunt ex ex. Culpa
+                            quis nulla pariatur. Cillum laboris aliquip incididunt dolor qui velit velit id duis Lorem.
+                            Irure ea est incididunt ex sunt velit magna cupidatat esse.</p>
+                        <div class="blog-content-lower">
+                            <div class="blog-chip-container">
+                                <div class="blog-chip">
+                                    React N.
+                                </div>
+                                <div class="blog-chip">
+                                    React N.
+                                </div>
+                            </div>
+                            <button class="blog-read-btn" id="test-article">Read</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const blogBtn = document.getElementById('lings-article');
+        blogBtn.addEventListener('click', () => {
+            document.location.href = './pages/blogs/lingscars.html';
+        });
+    });
+</script>
+
+</html>
