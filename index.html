@@ -24,120 +24,141 @@
         * {
             margin: 0;
             box-sizing: border-box;
-            /* outline: 1px solid red; */
+        }
+
+        /* BASE STYLES */
+
+        body {
+            background-color: var(--cream-color);
+            width: 100%;
+            min-height: 100vh;
+            font-family: "Syne", sans-serif;
+            overflow-x: hidden;
+        }
+
+        main {
+            width: 100%;
         }
 
         /* LARGE HEADER GRAPHIC */
 
-        body {
-            background-color: var(--cream-color);
-            width: 100vw;
-            height: 300vh;
-            font-family: "Syne";
-        }
-
-        main {
-            height: 100%;
-            width: 100%;
-        }
-
         header {
             text-align: right;
             width: 100%;
-            height: 610px;
+            height: clamp(200px, 30vw, 610px);
             background-color: var(--primary-color);
             color: var(--cream-color);
-            font-size: 340px;
-            font-family: 'Neokurat';
-            padding-right: 30px;
-            gap: 0px;
+            font-size: clamp(80px, 17vw, 340px);
+            font-family: 'Neokurat', sans-serif;
+            padding-right: clamp(12px, 2vw, 30px);
             line-height: .85;
+            overflow: hidden;
         }
 
-        /* ACTUAL HEADER */
+        /* ACTUAL HEADER / NAV */
+
         #real-header {
             display: flex;
             position: sticky;
             top: 0;
             justify-content: space-between;
+            align-items: center;
             width: 100%;
-            height: 100px;
+            height: clamp(60px, 8vw, 100px);
             z-index: 1000;
             background-color: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(15px);
-
-            /* Optional: subtle border to define the glass edge */
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            padding-right: 130px;
-            text-align: center;
+            padding: 0 clamp(16px, 4vw, 130px) 0 clamp(12px, 2vw, 20px);
+        }
+
+        #real-header h4 {
+            font-size: clamp(22px, 4vw, 66.4px);
+            font-weight: 400;
+            white-space: nowrap;
         }
 
         #real-header ul {
             display: flex;
             text-decoration: none;
             list-style-type: none;
-            gap: 40px;
+            gap: clamp(16px, 3vw, 40px);
             color: var(--ink-color);
-            margin: auto 0;
-            font-size: 33px;
-        }
-
-        #real-header h4 {
-            font-size: 66.4px;
-            font-weight: 400;
+            font-size: clamp(14px, 2vw, 33px);
         }
 
         #real-header a {
             text-decoration: none;
             color: var(--ink-color);
-
         }
 
-        /* 'Hero' Content */
-        #main-container {
-            display: flex;
-            height: 600px;
-            width: 100%;
-            padding: 0 48px;
-            gap: 28px;
+        /* Hamburger menu — hidden on desktop */
+        #hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
         }
 
-        #main-container>img {
-            background-image: url('https://design.penpot.app/assets/by-file-media-id/95ecf5e0-91fe-80de-8007-f45dc7c8016a');
-            width: 351px;
-            height: 481px;
+        #hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--ink-color);
         }
 
-        #main-container p {
-            font: normal normal 400 36px/0.8 "Syne";
-        }
+        /* DIVIDER */
 
         hr {
             width: 90%;
-            margin: 0px auto 25px auto;
+            margin: 0 auto 25px auto;
         }
 
-        /* Project Display Page */
+        /* 'Hero' Content */
+
+        #main-container {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: clamp(300px, 40vw, 600px);
+            width: 100%;
+            padding: clamp(16px, 3vw, 48px);
+            gap: clamp(16px, 2.5vw, 28px);
+        }
+
+        #main-container>img {
+            width: clamp(160px, 20vw, 351px);
+            height: clamp(220px, 28vw, 481px);
+            object-fit: cover;
+            background-color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        #main-container p {
+            font: normal normal 400 clamp(16px, 2vw, 36px) / 1.1 "Syne", sans-serif;
+            flex: 1;
+            min-width: 240px;
+        }
+
+        /* PROJECT DISPLAY */
 
         #project-page {
-            width: 1810px;
             display: flex;
             flex-flow: row wrap;
-            gap: none;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 90px;
-            /* Needs to be equal to shadow + roughly 40px*/
+            width: min(1810px, 100%);
+            margin: 0 auto 90px auto;
             box-shadow: -50px 50px 0px 0px rgba(0, 0, 0, 1);
         }
 
         .project-item {
             position: relative;
             background-color: var(--cream-color);
-            width: auto;
             border: 2px solid var(--ink-color);
-            width: 362px;
-            height: 401px;
+            /* fluid width: each card fills ~1/5 on large screens, scales down */
+            width: clamp(260px, 20%, 362px);
+            flex: 1 1 clamp(260px, 20%, 362px);
+            height: auto;
+            min-height: 401px;
             padding: 20px;
         }
 
@@ -146,16 +167,17 @@
             height: 150px;
             width: 100%;
             background-color: var(--primary-color);
+            object-fit: cover;
         }
 
         .project-item h3 {
             margin-top: 9px;
             margin-bottom: 10px;
-            font: normal normal 400 55px/0.85 "Neokurat";
+            font: normal normal 400 clamp(28px, 3.5vw, 55px) / 0.85 "Neokurat", sans-serif;
         }
 
         .project-item p {
-            font: normal normal 400 15px/1.2 "Syne";
+            font: normal normal 400 clamp(12px, 1.1vw, 15px) / 1.2 "Syne", sans-serif;
         }
 
         .project-item div.icon-link {
@@ -173,61 +195,89 @@
         .project-item .topic-chip-container {
             margin-top: 10px;
             display: flex;
-            gap: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .project-item .topic-chip {
             border: 2px solid black;
-            padding: 3px;
-            font: normal normal 400 18px/0.8 "Syne";
+            padding: 3px 5px;
+            font: normal normal 400 clamp(12px, 1.2vw, 18px) / 0.8 "Syne", sans-serif;
         }
 
-        /* BLOG PORTION */
+        /* BLOG SECTION */
+
         #blog-page {
             display: flex;
-            width: 87.25vw;
-            padding: 0 80px;
-            gap: 70px;
+            flex-wrap: wrap;
+            width: 100%;
+            padding: 0 clamp(16px, 5vw, 80px);
+            gap: clamp(24px, 4vw, 70px);
             justify-content: space-between;
+            margin-bottom: clamp(60px, 8vw, 120px);
+        }
+
+        #blog-left {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            flex-shrink: 0;
+        }
+
+        #blog-title-card {
+            font: normal normal 400 clamp(60px, 10vw, 240px) / 0.8 "Neokurat", sans-serif;
+            color: var(--cream-color);
+            background-color: var(--primary-color);
+            width: clamp(200px, 35vw, 720px);
+            height: clamp(140px, 18vw, 480px);
+            display: flex;
+            align-items: flex-end;
+            padding: clamp(8px, 1.5vw, 20px);
+        }
+
+        #social-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .social-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-row img {
+            width: 24px;
+            height: 24px;
+            background-color: var(--warm-gray);
         }
 
         #blog-right {
+            flex: 1;
+            min-width: 280px;
             height: fit-content;
-            width: fit-content;
             box-shadow: 50px 50px 0px 0px rgba(0, 0, 0, 1);
-
         }
-
-
-        #blog-title-card {
-            font: normal normal 400 240.3208755977516px/0.8 "Neokurat";
-            color: var(--cream-color);
-            background-color: var(--primary-color);
-            width: 720px;
-            height: 480px;
-        }
-
-
 
         .blog-item {
             display: flex;
-            width: 1050px;
-            height: 250px;
+            flex-wrap: wrap;
+            width: 100%;
+            min-height: 250px;
             border: 2px solid var(--ink-color);
-            padding: 25px;
-            gap: 19px;
+            padding: clamp(12px, 2vw, 25px);
+            gap: clamp(10px, 1.5vw, 19px);
             cursor: pointer;
         }
 
-
         .blog-item .blog-img-text {
             position: relative;
-            min-width: 400px;
-            min-height: 175px;
-            width: 400px;
-            height: 175px;
+            flex-shrink: 0;
+            width: clamp(160px, 28vw, 400px);
+            height: clamp(100px, 14vw, 175px);
             background-color: var(--primary-color);
-            font: normal normal 400 60.02768970005055px/0.8 "Neokurat";
+            font: normal normal 400 clamp(28px, 4vw, 60px) / 0.8 "Neokurat", sans-serif;
         }
 
         .blog-actual-text {
@@ -238,27 +288,132 @@
             color: var(--cream-color);
         }
 
+        .blog-item-content {
+            flex: 1;
+            min-width: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
         .blog-item-content p {
-            font: normal normal 400 18px/1.2 "Syne";
+            font: normal normal 400 clamp(12px, 1.1vw, 18px) / 1.2 "Syne", sans-serif;
         }
 
         .blog-content-lower {
             display: flex;
             width: 100%;
             justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
         }
 
         .blog-chip-container {
             display: flex;
-            gap: 10px;
+            flex-wrap: wrap;
+            gap: 8px;
             margin-top: 8px;
         }
 
         .blog-chip {
             border: 2px solid black;
-            padding: 3px;
-            font: normal normal 400 18px/0.8 "Syne";
+            padding: 3px 5px;
+            font: normal normal 400 clamp(12px, 1.2vw, 18px) / 0.8 "Syne", sans-serif;
+        }
 
+        /* BREAKPOINTS */
+
+        /* --- TABLET/SMALL PC UNDER 1024px --- */
+        @media (max-width: 1024px) {
+            #project-page {
+                box-shadow: -30px 30px 0px 0px rgba(0, 0, 0, 1);
+                margin-bottom: 60px;
+            }
+
+            .project-item {
+                /* 2 per row on tablet */
+                flex: 1 1 calc(50% - 2px);
+                min-width: calc(50% - 2px);
+            }
+
+            #blog-right {
+                box-shadow: 30px 30px 0px 0px rgba(0, 0, 0, 1);
+            }
+
+            #blog-page {
+                flex-direction: column;
+            }
+
+            #blog-title-card {
+                width: 100%;
+                height: clamp(120px, 22vw, 300px);
+            }
+        }
+
+        /* --- MOBILE UNDER 640px --- */
+        @media (max-width: 640px) {
+
+            /* Nav: hide links, show hamburger */
+            #real-header ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--cream-color);
+                padding: 16px 24px;
+                gap: 12px;
+                font-size: 22px;
+                border-bottom: 2px solid var(--ink-color);
+                z-index: 999;
+            }
+
+            #real-header ul.open {
+                display: flex;
+            }
+
+            #hamburger {
+                display: flex;
+            }
+
+            #main-container {
+                flex-direction: column;
+            }
+
+            #main-container>img {
+                width: 100%;
+                height: clamp(200px, 55vw, 320px);
+            }
+
+            .project-item {
+                flex: 1 1 100%;
+                min-width: 100%;
+            }
+
+            #project-page {
+                box-shadow: -20px 20px 0px 0px rgba(0, 0, 0, 1);
+                margin-bottom: 50px;
+            }
+
+            .blog-item {
+                flex-direction: column;
+            }
+
+            .blog-item .blog-img-text {
+                width: 100%;
+                height: clamp(100px, 40vw, 200px);
+            }
+
+            #blog-right {
+                box-shadow: 20px 20px 0px 0px rgba(0, 0, 0, 1);
+            }
+
+            #blog-title-card {
+                width: 100%;
+                font-size: clamp(48px, 15vw, 120px);
+                height: clamp(100px, 30vw, 200px);
+            }
         }
     </style>
 </head>
@@ -270,6 +425,11 @@
     <main>
         <div id="real-header">
             <h4>Griffin Leventhal</h4>
+            <div id="hamburger" aria-label="Open navigation" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul>
                 <li class="header-link"><a href="">Home</a></li>
                 <li class="header-link"><a href="">Projects</a></li>
@@ -293,7 +453,9 @@
                 tempor duis ex aliquip et.
                 Magna eiusmod aute labore. Occaecat ea do consequat veniam sit nostrud laborum minim pariatur aliqua.
                 Velit ullamco laboris sunt Lorem incididunt dolor nulla in aliquip. Ullamco officia voluptate sint
-                commodo id exercitation culpa duis nulla ea nisi. Exercitation commodo qui laborum eiusmod voluptate ex
+                commodo id exercitation culpa duis nulla ea nisi.
+                <br><br>
+                Exercitation commodo qui laborum eiusmod voluptate ex
                 laboris. Nostrud duis commodo irure sit ullamco enim ad duis duis voluptate. Veniam ullamco et aliqua.
                 Occaecat nostrud velit culpa ullamco nisi officia ut.
             </p>
@@ -507,9 +669,24 @@
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        // Blog navigation
         const blogBtn = document.getElementById('lings-article');
         blogBtn.addEventListener('click', () => {
             document.location.href = './pages/blogs/lingscars.html';
+        });
+
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('#real-header ul');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        hamburger.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                navLinks.classList.toggle('open');
+            }
         });
     });
 </script>
