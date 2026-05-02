@@ -11,7 +11,6 @@
             --cream-color: #ede9e1;
             --ink-color: #1c1c1a;
             --warm-gray: #c8c4bb;
-            background-color: var(--cream-color);
         }
 
         @font-face {
@@ -19,87 +18,382 @@
             src: url("../../resources/neokuratplakat-webfont.woff2");
         }
 
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            background-color: var(--cream-color);
+            font-family: "Syne", sans-serif;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* ── TITLE BLOCK ── */
 
         #article-title {
             float: left;
-            /* This moves the box to the left and pulls text up beside it */
             margin-right: 30px;
-            /* Adds space between the box and the text */
             margin-bottom: 20px;
-            width: 1100px;
-            height: 400px;
+            width: clamp(260px, 57vw, 1100px);
+            height: clamp(120px, 20vw, 400px);
             background-color: var(--primary-color);
-            font: normal normal 400 210px/0.85 "Neokurat";
+            font: normal normal 400 clamp(40px, 10vw, 210px) / 0.85 "Neokurat", sans-serif;
             color: var(--cream-color);
             padding: 15px;
-
             border-radius: 16px;
         }
 
+        /* ── ARTICLE BODY ── */
+
+        #article-body {
+            padding: clamp(24px, 4vw, 60px);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
         p {
-            font: normal normal 400 36px/0.8 "Syne";
+            font: normal normal 400 clamp(16px, 1.6vw, 24px) / 1.5 "Syne", sans-serif;
+        }
+
+        /* ── SECTION HEADINGS ── */
+
+        .section-heading {
+            font: normal normal 400 clamp(36px, 5vw, 90px) / 0.9 "Neokurat", sans-serif;
+            color: var(--ink-color);
+            margin: .5em 0 0.5em 0;
+        }
+
+        .section-heading span {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--cream-color);
+            padding: 4px 16px 6px 16px;
+            border-radius: 8px;
+        }
+
+        /* ── DESIGN GOALS LIST ── */
+
+        .goals-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.4em 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .goals-list li {
+            font: normal normal 400 clamp(15px, 1.4vw, 22px) / 1.4 "Syne", sans-serif;
+            position: relative;
+            padding-left: 42px;
+        }
+
+        .goals-list li::before {
+            content: "→";
+            position: absolute;
+            left: 14px;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* ── ARTICLE IMAGES ── */
+
+        .article-img-block {
+            margin: 2em 0;
+            clear: both;
+        }
+
+        .article-img-block img {
+            display: block;
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+            border: 2px solid var(--ink-color);
+        }
+
+        .img-caption {
+            font: normal normal 400 clamp(12px, 1.1vw, 16px) / 1.3 "Syne", sans-serif;
+            color: var(--ink-color);
+            opacity: 0.7;
+            margin-top: 8px;
+        }
+
+        /* Two sketches side by side */
+        .sketch-row {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin: 2em 0;
+            clear: both;
+        }
+
+        .sketch-row figure {
+            flex: 1 1 clamp(200px, 40%, 440px);
+        }
+
+        .sketch-row img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 2px solid var(--ink-color);
+        }
+
+        .sketch-row figcaption {
+            font: normal normal 400 clamp(12px, 1.1vw, 16px) / 1.3 "Syne", sans-serif;
+            color: var(--ink-color);
+            opacity: 0.7;
+            margin-top: 8px;
+        }
+
+        /* ── SITE LINK CALLOUT ── */
+
+        .site-link-box {
+            display: inline-block;
+            border: 2px solid var(--ink-color);
+            padding: 14px 24px;
+            margin: 1em 0 1.4em 0;
+            font: normal normal 400 clamp(14px, 1.3vw, 20px) / 1.4 "Syne", sans-serif;
+        }
+
+        .site-link-box strong {
+            color: var(--primary-color);
+        }
+
+        .site-link-box a {
+            color: var(--ink-color);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* ── ORIGINAL SITE CALLOUT ── */
+
+        .original-site-img {
+            float: right;
+            margin: 0 0 24px 32px;
+            width: clamp(220px, 28vw, 460px);
+            border: 2px solid var(--ink-color);
+        }
+
+        /* ── RESPONSIVE ── */
+
+        @media (max-width: 640px) {
+            #article-title {
+                float: none;
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .original-site-img {
+                float: none;
+                width: 100%;
+                margin: 0 0 20px 0;
+            }
+        }
+
+
+        /* ACTUAL HEADER / NAV */
+
+        #real-header {
+            display: flex;
+            position: sticky;
+            top: 0;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: clamp(60px, 8vw, 100px);
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 0 clamp(16px, 4vw, 130px) 0 clamp(12px, 2vw, 20px);
+        }
+
+        #real-header h4 {
+            font-size: clamp(22px, 4vw, 66.4px);
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        #real-header ul {
+            display: flex;
+            text-decoration: none;
+            list-style-type: none;
+            gap: clamp(16px, 3vw, 40px);
+            color: var(--ink-color);
+            font-size: clamp(14px, 2vw, 33px);
+        }
+
+        #real-header a {
+            text-decoration: none;
+            color: var(--ink-color);
         }
     </style>
 </head>
 
 <body>
     <header></header>
-
-    <body>
-        <div id="article-title">
-            Ling's Car Rewrite
+    <div id="real-header">
+        <h4>Griffin Leventhal</h4>
+        <div id="hamburger" aria-label="Open navigation" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <p>Deserunt sit culpa voluptate commodo laborum ipsum elit voluptate fugiat voluptate duis. Velit sunt est
-            commodo enim pariatur consectetur pariatur cillum. Nisi cupidatat in esse commodo mollit ut ea ut in do sunt
-            voluptate enim fugiat. Non ea irure ut in magna quis veniam quis est velit cillum laborum minim. Magna qui
-            culpa laboris ipsum minim elit do culpa esse. Eu eu incididunt enim reprehenderit nisi ex. Duis incididunt
-            exercitation deserunt enim ad exercitation do voluptate. Ad nostrud dolor dolore laboris voluptate esse
-            Lorem elit nisi eu adipisicing est non nisi ad. Deserunt sit culpa voluptate commodo laborum ipsum elit
-            voluptate fugiat voluptate duis. Velit sunt est commodo enim pariatur consectetur pariatur cillum. Nisi
-            cupidatat in esse commodo mollit ut ea ut in do sunt voluptate enim fugiat.
-            <br><br>
-            Non ea irure ut in magna quis
-            veniam quis est velit cillum laborum minim. Magna qui culpa laboris ipsum minim elit do culpa esse. Eu eu
-            incididunt enim reprehenderit nisi ex. Duis incididunt exercitation deserunt enim ad exercitation do
-            voluptate. Ad nostrud dolor dolore laboris voluptate esse Lorem elit nisi eu adipisicing est non nisi ad.
-            Deserunt sit culpa voluptate commodo laborum ipsum elit voluptate fugiat voluptate duis. Velit sunt est
-            commodo enim pariatur consectetur pariatur cillum. Nisi cupidatat in esse commodo mollit ut ea ut in do sunt
-            voluptate enim fugiat. Non ea irure ut in magna quis veniam quis est velit cillum laborum minim. Magna qui
-            culpa laboris ipsum minim elit do culpa esse. Eu eu incididunt enim reprehenderit nisi ex. Duis incididunt
-            exercitation deserunt enim ad exercitation do voluptate. Ad nostrud dolor dolore laboris voluptate esse
-            Lorem elit nisi eu adipisicing est non nisi ad. Deserunt sit culpa voluptate commodo laborum ipsum elit
-            voluptate fugiat voluptate duis.
-            <br><br>
-            Velit sunt est commodo enim pariatur consectetur pariatur cillum. Nisi
-            cupidatat in esse commodo mollit ut ea ut in do sunt voluptate enim fugiat. Non ea irure ut in magna quis
-            veniam quis est velit cillum laborum minim. Magna qui culpa laboris ipsum minim elit do culpa esse. Eu eu
-            incididunt enim reprehenderit nisi ex. Duis incididunt exercitation deserunt enim ad exercitation do
-            voluptate. Ad nostrud dolor dolore laboris voluptate esse Lorem elit nisi eu adipisicing est non nisi ad.
-            Deserunt sit culpa voluptate commodo laborum ipsum elit voluptate fugiat voluptate duis. Velit sunt est
-            commodo enim pariatur consectetur pariatur cillum. Nisi cupidatat in esse commodo mollit ut ea ut in do sunt
-            voluptate enim fugiat. Non ea irure ut in magna quis veniam quis est velit cillum laborum minim. Magna qui
-            culpa laboris ipsum minim elit do culpa esse. Eu eu incididunt enim reprehenderit nisi ex. Duis incididunt
-            exercitation deserunt enim ad exercitation do voluptate. Ad nostrud dolor dolore laboris voluptate esse
-            Lorem elit nisi eu adipisicing est non nisi ad. Deserunt sit culpa voluptate commodo laborum ipsum elit
-            voluptate fugiat voluptate duis. Velit sunt est commodo enim pariatur consectetur pariatur cillum. Nisi
-            cupidatat in esse commodo mollit ut ea ut in do sunt voluptate enim fugiat. Non ea irure ut in magna quis
-            veniam quis est velit cillum laborum minim. Magna qui culpa laboris ipsum minim elit do culpa esse. Eu eu
-            incididunt enim reprehenderit nisi ex. Duis incididunt exercitation deserunt enim ad exercitation do
-            voluptate. Ad nostrud dolor dolore laboris voluptate esse Lorem elit nisi eu adipisicing est non nisi ad.
-            Deserunt sit culpa voluptate commodo laborum ipsum elit voluptate fugiat voluptate duis. Velit sunt est
-            commodo enim pariatur consectetur pariatur cillum. Nisi cupidatat in esse commodo mollit ut ea ut in do sunt
-            voluptate enim fugiat. Non ea irure ut in magna quis veniam quis est velit cillum laborum minim. Magna qui
-            culpa laboris ipsum minim elit do culpa esse. Eu eu incididunt enim reprehenderit nisi ex. Duis incididunt
-            exercitation deserunt enim ad exercitation do voluptate. Ad nostrud dolor dolore laboris voluptate esse
-            Lorem elit nisi eu adipisicing est non nisi ad. Deserunt sit culpa voluptate commodo laborum ipsum elit
-            voluptate fugiat voluptate duis. Velit sunt est commodo enim pariatur consectetur pariatur cillum. Nisi
-            cupidatat in esse commodo mollit ut ea ut in do sunt voluptate enim fugiat. Non ea irure ut in magna quis
-            veniam quis est velit cillum laborum minim. Magna qui culpa laboris ipsum minim elit do culpa esse. Eu eu
-            incididunt enim reprehenderit nisi ex. Duis incididunt exercitation deserunt enim ad exercitation do
-            voluptate. Ad nostrud dolor dolore laboris voluptate esse Lorem elit nisi eu adipisicing est non nisi ad.
+        <ul>
+            <li class="header-link"><a href="./../../index.html">Home</a></li>
+            <li class="header-link"><a href="./../../index.html">Projects</a></li>
+            <li class="header-link"><a href="./../../index.html">Blog</a></li>
+        </ul>
+    </div>
+    <div id="article-body">
+
+        <!-- ── TITLE ── -->
+        <div id="article-title">Ling's Car Rewrite</div>
+
+        <!-- ── INTRO / PROBLEM ── -->
+        <p>
+            Ling's car website has significant usability issues related to visual hierarchy and cognitive load.
+            The page is cluttered with high-frequency visual effects, bright colors, and excessive text, making it
+            difficult for users to understand where to focus for primary tasks such as finding price information or
+            locating a car. As layout and navigation elements change constantly, it increases user confusion and forces
+            users to spend extra time trying to interpret the application.
         </p>
-    </body>
+
+        <img class="original-site-img" src="../../resources/img-lings-original.png"
+            alt="Screenshot of the original Ling's Cars website, showing its visually cluttered homepage">
+
+        <p>As such, we went in with a few design goals:</p>
+
+        <ul class="goals-list">
+            <li>Ensure home screen information is never overwritten.</li>
+            <li>Ensure all home screen information has pre-defined space if it cannot be immediately displayed.</li>
+            <li>Ensure visual hierarchy of text remains consistent across all pages.</li>
+            <li>Reduce visual clutter by limiting the number of fonts, colors, and decorative elements used on each
+                screen.</li>
+            <li>Improve the readability of pages by using consistent spacing, alignment, and margins to separate
+                sections very clearly.</li>
+        </ul>
+
+        <!-- ── PROCESS OVERVIEW ── -->
+        <h2 class="section-heading"><span>The Process</span></h2>
+
+        <p>
+            We went through the prototype testing phase, as prescribed by the assignments themselves.
+            We iteratively created screens, did user testing, and further refined said screens based on user feedback.
+        </p>
+
+        <!-- ── ROUND 1 TESTING ── -->
+        <h2 class="section-heading"><span>Round 1: Peer Usability Testing</span></h2>
+
+        <p>
+            The first round of peer usability testing gave us feedback on both the design itself and how we
+            should conduct testing. A significant issue we ran into during testing was repetition of questions
+            and needing higher levels of specificity when it comes to tasks. For example, when we had the
+            task "Locate a brand of car you would like to purchase from," we instead should've worded it
+            "Locate and select the Ford brand as you would while purchasing a car," or a similar variation.
+            Higher levels of specificity would lead to better results.
+        </p>
+
+        <p>
+            While this mistake would be repeated to a lesser degree on following assignments, it was caught early
+            and addressed for the most part. After testing, we noticed that users wanted specific information, and
+            our questions would be best answered by said specific information, making our tests less effective than
+            we would've liked. We addressed this by adding specific information, as well as further defining
+            navigational features by ensuring a search bar would be added and placed in a key location — as users
+            wanted broader and easier-to-access navigation.
+        </p>
+
+        <p>We used these sketches to guide our first round of revisions:</p>
+
+        <div class="sketch-row">
+            <figure>
+                <img src="../../resources/img-sketch-car-details.png"
+                    alt="Hand-drawn sketch of the Car Details page desktop layout, showing price, car image, View Deal button, and similar car suggestions">
+                <figcaption>Car Details page sketch — Desktop. Clear pricing shown next to the image; "View Deal"
+                    separated to emphasize the primary action.</figcaption>
+            </figure>
+            <figure>
+                <img src="../../resources/img-sketch-browse.png"
+                    alt="Hand-drawn sketch of the Browse page, showing a table layout for desktop and a stacked list layout for mobile">
+                <figcaption>Browse page sketch — Desktop & Mobile. Table view on desktop; card-list view on mobile.
+                </figcaption>
+            </figure>
+        </div>
+
+        <!-- ── ROUND 2 TESTING ── -->
+        <h2 class="section-heading"><span>Round 2: Peer Usability Testing</span></h2>
+
+        <p>
+            The second round of peer usability testing gave us good feedback on the discoverability of our
+            website. While users would parse our website fine after having used it a couple of times, any first
+            navigation would be unusually difficult — key elements and information were not visually distinct from
+            less important elements, and navigational elements often blended in with non-navigational ones.
+            We used size to draw users towards key elements such as names, prices, and navigational utilities.
+        </p>
+
+        <p>We used these wireframes to inform this round of changes:</p>
+
+        <div class="article-img-block">
+            <img src="../../resources/img-figma-v1.png"
+                alt="Figma workspace showing multiple desktop prototype iterations of the Ling's Cars redesign across various stages">
+            <p class="img-caption">Figma workspace — iterative desktop prototype screens from early to mid-development.
+            </p>
+        </div>
+
+        <!-- ── FINAL PROTOTYPE ── -->
+        <h2 class="section-heading"><span>Final Prototype & Implementation</span></h2>
+
+        <p>
+            We got more important feedback from the final prototype. While this was in part due to the
+            nature of a Figma site, users were often caught off guard by the results of their actions, or
+            unsure where buttons or some elements would lead. For example, during a test I noticed
+            that the user would hesitate on portions we thought were easier to navigate, and then click on
+            things we didn't intend — such as the information bar rather than the navigational button — taking
+            considerable time.
+        </p>
+
+        <p>
+            We inferred that we likely needed better signifiers regarding clickable elements, and implemented
+            improved hover states, which seemed to clear that confusion up. We also found that unimplemented
+            form validation confused users, leading them to think their input was correct when it wasn't (or
+            vice versa), which was addressed and made note of.
+        </p>
+
+        <div class="article-img-block">
+            <img src="../../resources/img-figma-v2.png"
+                alt="Figma workspace showing the final set of prototype screens including the home page, car details, leasing form, and purchase confirmation pages">
+            <p class="img-caption">Final prototype screens — home, car details, leasing form, and purchase confirmation.
+            </p>
+        </div>
+
+        <div class="site-link-box">
+            <strong>Live Site: </strong>
+            <a href="https://griffinluncc.github.io/lings-cars-website/index.html" target="_blank">
+                griffinluncc.github.io/lings-cars-website/index.html
+            </a>
+        </div>
+
+        <p>
+            We then developed the site into what you see at the link above. We did have feedback
+            post-implementation regarding the design of the site itself, leading to some significant visual
+            changes hoping to add elevation and other modern design concepts. Notable changes included
+            ensuring that users are presented with minimal but direct choices at the start, while still being
+            given the navigational freedom expected of a vehicle leasing website. This was done by removing
+            information from the hero but adding a general search bar to the header, moving search-and-filter
+            information to other pages. This removed initial friction and placed it where users already expect
+            to have to sort through information.
+        </p>
+
+        <p>
+            We also ensured that information would never be removed in different states of the website —
+            referencing the original site's problem of hiding navigational elements after viewing a few cars.
+            By ensuring consistency and being more cognizant of what information users were presented with at
+            the start, we have reduced the learning curve of the site and improved it markedly.
+        </p>
+
+    </div>
 </body>
 
 </html>
